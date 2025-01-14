@@ -16,6 +16,7 @@ const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 window.TWA = window.Telegram ? window.Telegram.WebApp : null;
 window.debug = (...t) => console.log(...t);
 window.redirect =  (path) => window.location = path;
+window.goBack =  () => history.back();
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
@@ -35,6 +36,6 @@ createInertiaApp({
 
     },
     progress: {
-        color: '#4B5563',
+        // color: '#4B5563',
     },
 });
