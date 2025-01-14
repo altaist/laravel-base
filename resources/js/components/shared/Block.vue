@@ -1,5 +1,6 @@
 <template>
-    <div :class="['text-center text-h6 q-my-lg q-pa-md q-py-lg vertical-middle', 'rounded', color, text]" :style="'min-height:' + height">
+    <div :class="['text-h6 q-pa-md q-py-lg vertical-middle', 'rounded-1', color, bgColor]" :style="'min-height:' + height">
+        <div class="text-h4 q-mb-md" v-if="title">{{ title }}</div>
         <slot/>
     </div>
 </template>
@@ -10,13 +11,12 @@ const props = defineProps({
         type: String,
         default: ''
     },
-    color: {
+    bgColor: {
         type: String,
-        default: 'bg-deep-orange-3'
+        default: ''
     },
-    text: {
-        type: String,
-        default: 'text-white'
+    color: {
+        type: String
     },
     height: {
         type: String,

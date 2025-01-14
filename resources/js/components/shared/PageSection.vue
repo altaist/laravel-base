@@ -1,7 +1,7 @@
 <template>
     <div class="q-mb-xl" :style="'min-height:' + height">
         <div class="q-my-md" v-if="title">
-            <section-title @click="emit('click:title')">{{ title }}</section-title>
+            <page-section-title @click="emit('click:title')">{{ title }}</page-section-title>
         </div>
         <div class="q-my-md">
             <slot />
@@ -9,6 +9,8 @@
     </div>
 </template>
 <script setup>
+import PageSectionTitle from '@/components/shared/PageSectionTitle.vue';
+
 
 const props = defineProps({
     title: {

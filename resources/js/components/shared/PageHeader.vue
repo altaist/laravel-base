@@ -1,14 +1,16 @@
 <template>
     <div class="q-pa-md">
         <div class="row">
-            <div class="col" v-if="showBackBtn"><btn label="<" @click="history.back()"/></div>
-            <div class="col" v-if="showAppIcon"><span>{{ icon }}</span></div>
-            <div class="col text-center"><page-title>{{ title }}</page-title></div>
-            <div class="col text-right"><btn :icon="profile" @click="emit('header-profile-click')"/></div>
+            <div class="col" v-if="leftBtnIcon">
+                <btn :icon="leftBtnIcon" @click="onLeftBtnlick"/>
+            </div>
+            <div class="col text-center"><page-title>{{title}}</page-title></div>
+            <div class="col text-right" v-if="rightBtnIcon"><btn :icon="rightBtnIcon" @click="onRightBtnClick"/></div>
         </div>
     </div>
 </template>
 <script setup>
+
 const props = defineProps({
     title: {
         type: String
@@ -17,26 +19,47 @@ const props = defineProps({
         type: String,
         default: 'primary'
     },
-    showBackBtn: {
-        type: Boolean,
-        default: true
+
+
+    leftBtnIcon: {
+        type: String,
     },
-    showProfileBtn: {
+    leftBtnRoute: {
+        type: String
+    },
+    leftBtnGoBack: {
         type: Boolean,
         default: true
     },
 
 
-    appIcon: {
-        type: String,
+    rightBtnIcon: {
+        type: String
     },
-    profileIcon: {
-        type: String,
-    },
+    rightBtnRoute: {
+        type: String
+    }
 
 });
 
-const emit = defineEmits(['click:profile', 'click:lang', 'click:wallet']);
+const emit = defineEmits(['click:left', 'click:right', 'click:title']);
 
+const onLeftBtnlick = () => {
+    if(props.leftBtnRoute) {
+        return redirect(props.leftBtnRoute);
+    }
+    if(props.leftBtnGoBack) {
+        return goBack();
+    }
+    return emit("click:left")
+}
+
+
+const onRightBtnClick = () => {
+    if(props.rightBtnRoute) {
+        return redirect(props.rightBtnRoute);
+    }
+    return emit("click:right")
+}
 
 </script>

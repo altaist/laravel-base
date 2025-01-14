@@ -10,7 +10,7 @@ const props = defineProps({
     },
     color: {
         type: String,
-        default: 'deep-orange'
+        default: 'primary'
     },
 });
 const emit = defineEmits(['click']);

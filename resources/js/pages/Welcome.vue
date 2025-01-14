@@ -1,3 +1,23 @@
+<template>
+    <page-layout 
+        title="Приложение"
+        footer-text="Контакты"
+        :left-btn-go-back="true"
+        @click:header:left="onHomeClick"
+        >
+
+        <page-section title="Добро пожаловать!">
+            Мы всем тут рады
+        </page-section>
+        
+        <page-section title="О сервисе">
+            Немного о нас
+        </page-section>
+
+        <block color="text-white" bg-color="bg-accent" title="Важная информация">В этом блоке отображается важная информация</block>
+
+    </page-layout>
+</template>
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
 
@@ -5,17 +25,7 @@ defineProps({
 
 });
 
-function handleImageError() {
-    document.getElementById('screenshot-container')?.classList.add('!hidden');
-    document.getElementById('docs-card')?.classList.add('!row-span-1');
-    document.getElementById('docs-card-content')?.classList.add('!flex-row');
-    document.getElementById('background')?.classList.add('!hidden');
+const onHomeClick = () => {
 }
 
 </script>
-
-<template>
-    <div >
-        <h1 class="q-pa-xl">Welcome!!!</h1>
-    </div>
-</template>

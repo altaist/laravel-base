@@ -1,7 +1,8 @@
 <template>
-    <div class="text-h5 q-pa-sm bg-secondary text-white rounded-1" @click="emit('click')">
+    <div class="text-h5 q-py-sm rounded-1" @click="emit('click')">
         <slot/>
     </div>
+    <q-separator/>
 </template>
 <script setup>
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="text-h2" @click="emit('page-title-click')">
+    <div class="text-h5" @click="emit('page-title-click')">
         <slot/>
     </div>
 </template>

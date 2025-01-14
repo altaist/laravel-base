@@ -2,16 +2,16 @@
     <div style="position: fixed; bottom: 0; width: 100%;">
         <div class="q-pa-md">
             <div class="row">
-                <div class="col"><btn :label="t('footer.btn_code')" @click="emit('click:code')"/></div>
-                <div class="col text-center"><btn :label="t('footer.btn_social')"/></div>
-                <div class="col text-right"><btn :label="t('footer.btn_share')"/></div>
+                <div class="col"></div>
+                <div class="col text-center">{{ title }}</div>
+                <div class="col text-right"></div>
             </div>
         </div>
     </div>
 </template>
 <script setup>
 const props = defineProps({
-    label: {
+    title: {
         type: String
     },
     color: {
