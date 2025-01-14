@@ -15,5 +15,7 @@ function handleImageError() {
 </script>
 
 <template>
-<h1>Welcome!</h1>
+    <div >
+        <h1 class="q-pa-xl">Welcome!!!</h1>
+    </div>
 </template>

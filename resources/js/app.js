@@ -7,6 +7,11 @@ import { createApp, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import {ProjectPlugin} from '@/plugins/project';
 
+import { Quasar } from 'quasar';
+import quasarOptions from './quasar_options';
+// import '@quasar/extras/material-icons/material-icons.css'
+import 'quasar/src/css/index.sass';
+
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 window.TWA = window.Telegram ? window.Telegram.WebApp : null;
 window.debug = (...t) => console.log(...t);
@@ -23,6 +28,7 @@ createInertiaApp({
         const app = createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
+            .use(Quasar, quasarOptions)
             .use(ProjectPlugin);
 
         return app.mount(el);
