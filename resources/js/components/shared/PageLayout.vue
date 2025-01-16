@@ -1,5 +1,5 @@
 <template>
-    <div class="q-px-md">
+    <div>
         <page-header
             :title="title"
             :left-btn-icon="leftBtnIcon"
@@ -12,17 +12,18 @@
             @click:right="emit('click:header:right')"
             />
 
-        <page-container>
+        <page-container class="q-px-md" style="margin-bottom: 100px;">    
             <slot/>
         </page-container>
 
         <page-footer 
-            v-if="footerText"
             :title="footerText"
+            :is-sticky="true"
+            :menu="footerMenu || localMenu"
 
             @click:left="emit('click:footer:left')"
             @click:right="emit('click:footer:right')"
-
+            @click:menu="emit('click:footer:menu', $event)"
         />
     </div>
 </template>
@@ -39,6 +40,10 @@ const props = defineProps({
         type: String,
         default: ''
     },
+    footerMenu: {
+        type: Array,
+        default: null
+    },
 
     leftBtnIcon: {
         type: String,
@@ -51,7 +56,6 @@ const props = defineProps({
         type: Boolean,
         default: true
     },
-
     rightBtnIcon: {
         type: String,
         default: 'fa-solid fa-user'
@@ -62,10 +66,28 @@ const props = defineProps({
     },
 });
 
-const emit = defineEmits(['click:header:left', 'click:header:right', 'click:header:title', 'click:footer:left', 'click:footer:right', 'click:footer:title']);
+const emit = defineEmits(['click:header:left', 'click:header:right', 'click:header:title', 'click:footer:left', 'click:footer:right', 'click:footer:title', 'click:footer:menu']);
 
 const model = defineModel({
     type: String,
 });
+
+const localMenu = [
+    {
+        id: 1,
+        label: 'Menu1',
+        icon: 'fa-solid fa-home'
+    },
+    {
+        id: 2,
+        label: 'Menu2',
+        icon: 'fa-solid fa-shop'
+    },
+    {
+        id: 3,
+        label: 'Menu3',
+        icon: 'fa-solid fa-user'
+    }
+];
 
 </script>

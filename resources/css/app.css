@@ -5,6 +5,7 @@
 html, body {
     background-color: white;
     background-size: 100%;
+    min-height: 100%;
 }
 
 .rounded-1 {
@@ -21,4 +22,25 @@ html, body {
 
 .border-2 {
     border: 0.4rem solid black
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.top {
+    top: 0;
+}
+
+.bottom {
+    bottom: 0;
 }

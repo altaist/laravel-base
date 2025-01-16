@@ -1,20 +1,20 @@
 <template>
     <page-layout 
-        title="Приложение"
+        title="ПРИЛОЖЕНИЕ"
         footer-text="Контакты"
         :left-btn-go-back="true"
-        @click:header:left="onHomeClick"
+        @click:footer:menu="onMenuClick"
         >
 
         <page-section title="Добро пожаловать!">
-            Мы всем тут рады
+            <lorem></lorem>
         </page-section>
         
         <page-section title="О сервисе">
             Немного о нас
         </page-section>
 
-        <block color="text-white" bg-color="bg-accent" title="Важная информация">В этом блоке отображается важная информация</block>
+        <block color="text-white" bg-color="bg-secondary" title="Важная информация">В этом блоке отображается важная информация</block>
 
     </page-layout>
 </template>
@@ -25,7 +25,8 @@ defineProps({
 
 });
 
-const onHomeClick = () => {
+const onMenuClick = (menuId) => {
+    console.log(`Menu ${menuId}`);
 }
 
 </script>

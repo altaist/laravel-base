@@ -6,6 +6,7 @@ import PageSection from '@/components/shared/PageSection.vue';
 import PageTitle from '@/components/shared/PageTitle.vue';
 import Btn from '@/components/shared/Btn.vue';
 import Block from '@/components/shared/Block.vue';
+import Lorem from '@/components/shared/Lorem.vue';
 
 
 export const ProjectPlugin = {
@@ -19,6 +20,7 @@ export const ProjectPlugin = {
         app.component("page-section", PageSection);
         app.component("block", Block);
         app.component("btn", Btn);
+        app.component("lorem", Lorem);
 /*
         app.component("btn-flat", BtnFlat);
         app.component("btn-ok", BtnOk);

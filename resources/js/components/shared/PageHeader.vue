@@ -1,6 +1,6 @@
 <template>
-    <div class="q-pa-md">
-        <div class="row">
+    <div class="q-pa-md sticky top bg-white border">
+        <div class="row items-center">
             <div class="col" v-if="leftBtnIcon">
                 <btn :icon="leftBtnIcon" @click="onLeftBtnlick"/>
             </div>
